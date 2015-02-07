@@ -23,25 +23,14 @@
   </head>
 
   <body ng-app="starter">
-    <ion-pane ng-controller="MyController">
+    <ion-pane ng-controller="RootController">
       <ion-header-bar class="bar-positive">
-        <h1 class="title">GAZ</h1>
+        <h1 class="title">The GAZ App</h1>
       </ion-header-bar>
       <ion-content class="has-header">
-        <button class="btn" ng-click="openPopover($event)">Pop</button>
       </ion-content>
     </ion-pane>
   </body>
 
 
-  <script id="my-popover.html" type="text/ng-template">
-    <ion-popover-view>
-      <ion-header-bar>
-        <h1 class="title">My Popover Title</h1>
-      </ion-header-bar>
-      <ion-content>
-        Hello!
-      </ion-content>
-    </ion-popover-view>
-  </script>
 </html>

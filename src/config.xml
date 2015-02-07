@@ -2,7 +2,7 @@
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>The GAZ App</name>
     <description>
-        Controll you GAZ expenses with this cool app
+        Control you GAZ expenses with this cool GAZ app
     </description>
     <author email="ziaxdk@gmail.com" href="http://www.ziax.dk">
         ZiaxDK
