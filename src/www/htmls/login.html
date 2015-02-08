@@ -4,7 +4,7 @@
   </ion-header-bar>
   <ion-content>
     <div class="list">
-      <form ng-controller="LoginController" ng-submit="submitForm()" name="theForm">
+      <form ng-controller="LoginController as LoginCtrl" ng-submit="LoginCtrl.submitForm()" name="theForm">
         <label class="item item-input item-floating-label">
           <span class="input-label">Email</span>
           <input type="text" placeholder="Email (uid)" name="email" ng-model="f.email" required>
