@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     path = require('path'),
     gulpexpress = require('./lib/gulp-express.js'),
     livereload = require('gulp-livereload'),
+    browserify = require('gulp-browserify'),
     to5 = require("gulp-6to5");
 
 gulp.task('server', function() {
@@ -24,7 +25,16 @@ gulp.task('watch', function() {
   gulp.watch([ 'index.js' ], ['server']);
 });
 
-gulp.task( 'dev', [ 'server', '6to5', 'watch' ] );
 
+gulp.task('browserify', function() {
+  gulp.src('./src/www/js6/The-Gaz-App.js')
+      .pipe(browserify({
+        insertGlobals : true,
+      }))
+      .pipe(gulp.dest('./src/www/js'))
+});
+
+gulp.task( 'dev', [ 'server', '6to5', 'watch' ] );
+gulp.task( 'deploy', [ 'browserify' ]);
 
 

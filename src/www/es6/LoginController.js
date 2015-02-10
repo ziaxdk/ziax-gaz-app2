@@ -1,19 +1,20 @@
 class LoginController {
 
-  constructor($scope) {
+  constructor($scope, RestService) {
     this.scope = $scope;
     this.scope.f = {};
-    // $scope.f = {};
-    // $scope.submitForm = function() {
-    //   if ($scope.theForm.$invalid) return;
-    //   console.log('submit', $scope.f);
-    // };
-
+    this.RestService = RestService;
   }
 
   submitForm () {
-    console.log('submitForm');
+    // this.scope.modal.closeModal();
+    console.log(this.scope.$parent);
+    this.RestService.authorize(this.scope.f.email ,this.scope.f.password)
+      .then((arg) => {
+        this.scope.$emit('authenticate_ok', arg.data);
+      });
   }
+
 
 
 }
